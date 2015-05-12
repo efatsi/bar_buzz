@@ -3,13 +3,13 @@
 <%= line_chart [
   {
     name: "Mean",
-    data: @core.means[1..-1].inject({}) do |hash, measurement|
+    data: @core.means.inject({}) do |hash, measurement|
       hash.merge(measurement.created_at => measurement.value)
     end
   },
   {
     name: "Variance",
-    data: @core.variances[1..-1].inject({}) do |hash, measurement|
+    data: @core.variances.inject({}) do |hash, measurement|
       hash.merge(measurement.created_at => measurement.value)
     end
   } ]

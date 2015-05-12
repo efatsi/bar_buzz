@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: bar_buzz_development
   pool: 5
-  username: efatsi
+  username: root
   password:
   host: localhost
 
@@ -12,7 +12,7 @@ test:
   encoding: unicode
   database: bar_buzz_test
   pool: 5
-  username: efatsi
+  username: root
   password:
   host: localhost
 
@@ -21,6 +21,6 @@ production:
   encoding: unicode
   database: bar_buzz_development
   pool: 5
-  username: efatsi
+  username: root
   password:
   host: localhost

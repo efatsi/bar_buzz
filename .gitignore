@@ -16,3 +16,4 @@
 /tmp
 
 /config/ruby_spark.yml
+/config/database.yml

@@ -1,11 +1,15 @@
+<h1><%= @core.name %></h1>
+
+<h3>Means</h3>
 <ul>
-  <% @core.means do |mean| %>
-    <li><%= mean %></li>
+  <% @core.means.each do |mean| %>
+    <li><%= mean.value %></li>
   <% end %>
 </ul>
 
+<h3>Variances</h3>
 <ul>
-  <% @core.variances do |variance| %>
-    <li><%= variance %></li>
+  <% @core.variances.each do |variance| %>
+    <li><%= variance.value %></li>
   <% end %>
 </ul>

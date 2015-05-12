@@ -1,15 +1,36 @@
 <h1><%= @core.name %></h1>
 
-<h3>Means</h3>
-<ul>
-  <% @core.means.each do |mean| %>
-    <li><%= mean.value %></li>
-  <% end %>
-</ul>
+<%= line_chart [
+  {
+    name: "Mean",
+    data: @core.means[1..-1].inject({}) do |hash, measurement|
+      hash.merge(measurement.created_at => measurement.value)
+    end
+  },
+  {
+    name: "Variance",
+    data: @core.variances[1..-1].inject({}) do |hash, measurement|
+      hash.merge(measurement.created_at => measurement.value)
+    end
+  } ]
+%>
 
-<h3>Variances</h3>
-<ul>
-  <% @core.variances.each do |variance| %>
-    <li><%= variance.value %></li>
-  <% end %>
-</ul>
+<hr>
+
+<%= line_chart [
+  {
+    name: "Mean",
+    data: @core.means.inject({}) do |hash, measurement|
+      hash.merge(measurement.created_at => measurement.value)
+    end
+  } ]
+%>
+
+<%= line_chart [
+  {
+    name: "Variance",
+    data: @core.variances.inject({}) do |hash, measurement|
+      hash.merge(measurement.created_at => measurement.value)
+    end
+  } ]
+%>

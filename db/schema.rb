@@ -25,8 +25,8 @@ ActiveRecord::Schema.define(version: 20150512163957) do
 
   create_table "measurements", force: true do |t|
     t.string   "type"
-    t.string   "value"
-    t.string   "core_id"
+    t.integer  "value"
+    t.integer  "core_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

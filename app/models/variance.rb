@@ -1,0 +1,2 @@
+class Variance < Measurement
+end

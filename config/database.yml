@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: bar_buzz_development
+  pool: 5
+  username: efatsi
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: bar_buzz_test
+  pool: 5
+  username: efatsi
+  password:
+  host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: bar_buzz_development
+  pool: 5
+  username: efatsi
+  password:
+  host: localhost

@@ -1,0 +1,2 @@
+class Mean < Measurement
+end

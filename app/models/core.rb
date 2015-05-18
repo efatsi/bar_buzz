@@ -9,13 +9,15 @@ class Core < ActiveRecord::Base
   end
 
   def fetch_data
-    mean     = Mean.new(value: spark_core.variable("mean"), day: Date.current)
-    variance = Variance.new(value: spark_core.variable("variance"), day: Date.current)
+    if Time.zone.now.hour > 7 && Time.zone.now.hour < 19
+      mean     = Mean.new(value: spark_core.variable("mean"), day: Date.current)
+      variance = Variance.new(value: spark_core.variable("variance"), day: Date.current)
 
-    means     << mean
-    variances << variance
+      means     << mean
+      variances << variance
 
-    "#{mean.value} / #{variance.value}"
+      "#{mean.value} / #{variance.value}"
+    end
   end
 
   # private

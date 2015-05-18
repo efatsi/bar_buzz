@@ -9,8 +9,8 @@ class Core < ActiveRecord::Base
   end
 
   def fetch_data
-    mean = Mean.new(value: spark_core.variable("mean"))
-    variance = Variance.new(value: spark_core.variable("variance"))
+    mean     = Mean.new(value: spark_core.variable("mean"), day: Date.current)
+    variance = Variance.new(value: spark_core.variable("variance"), day: Date.current)
 
     means     << mean
     variances << variance

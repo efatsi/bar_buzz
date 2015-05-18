@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20150512163957) do
     t.string   "type"
     t.integer  "value"
     t.integer  "core_id"
+    t.date     "day"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

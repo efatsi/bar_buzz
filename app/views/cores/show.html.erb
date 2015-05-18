@@ -1,15 +1,21 @@
 <h1><%= @core.name %></h1>
 
+<div>
+  <% @days.map do |day| %>
+    <%= link_to day.strftime("%-m/%-d"), {day: day.strftime("%Y-%-m-%-d")} %>
+  <% end %>
+</div>
+
 <%= line_chart [
   {
     name: "Mean",
-    data: @core.means.inject({}) do |hash, measurement|
+    data: @means.inject({}) do |hash, measurement|
       hash.merge(measurement.created_at => measurement.value)
     end
   },
   {
     name: "Variance",
-    data: @core.variances.inject({}) do |hash, measurement|
+    data: @variances.inject({}) do |hash, measurement|
       hash.merge(measurement.created_at => measurement.value)
     end
   } ]
@@ -20,7 +26,7 @@
 <%= line_chart [
   {
     name: "Mean",
-    data: @core.means.inject({}) do |hash, measurement|
+    data: @means.inject({}) do |hash, measurement|
       hash.merge(measurement.created_at => measurement.value)
     end
   } ]
@@ -29,7 +35,7 @@
 <%= line_chart [
   {
     name: "Variance",
-    data: @core.variances.inject({}) do |hash, measurement|
+    data: @variances.inject({}) do |hash, measurement|
       hash.merge(measurement.created_at => measurement.value)
     end
   } ]
